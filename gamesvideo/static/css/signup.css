@@ -1,21 +1,24 @@
 .signup-form-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 600px;
     align-items: center;
+    justify-content: center;
+    min-height: 80vh;
     background-color: white;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #444;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 550px;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 .signup-form label {
@@ -66,4 +69,11 @@
     margin-bottom: 1rem;
     list-style: none;
     padding-left: 0;
+}
+
+.signup-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }

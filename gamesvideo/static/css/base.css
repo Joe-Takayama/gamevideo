@@ -13,6 +13,8 @@ body {
     font-family: 'Arial', sans-serif;
     min-height: 100vh;
     background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -52,4 +54,16 @@ header {
 
 .base-title {
     color: red;
+}
+
+.main {
+    flex: 1
+}
+
+.footer {
+    width: 100%;
+    max-width: 1500px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
 }
