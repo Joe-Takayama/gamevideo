@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block css %}{% endblock %}
+    {% block title %}<title>試合動画アップロードサイト</title>{% endblock %}
+</head>
+<body>
+    <h1 class="base-title">base.htmlです</h1>
+    {% block content %}{% endblock %}
+</body>
+</html>
