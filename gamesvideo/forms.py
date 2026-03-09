@@ -4,14 +4,23 @@ from django import forms
 
 class SignupForm(UserCreationForm):
     email = forms.EmailField(
-        label="メールアドレス"
+        label="",
+        widget=forms.EmailInput(attrs={
+            "placeholder": "メールアドレスを入力してください"
+        })
     )
 
     class Meta:
         model = User
-        fields = ["username", "email", "password1", "password2"]
-        labels = {
-            "username": "ユーザー名",
-            "password1": "パスワード",
-            "password2": "パスワード（確認）",
+        fields = ("username", "email", "password1", "password2")
+        widgets = {
+            "username": forms.TextInput(attrs={
+                "placeholder": "ユーザー名を入力してください"
+            }),
+            "password1": forms.PasswordInput(attrs={
+                "placeholder": "パスワードを入力してください"
+            }),
+            "password2": forms.PasswordInput(attrs={
+                "placeholder": "パスワードを再入力してください"
+            })
         }

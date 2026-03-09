@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.contrib.auth import login
 from .forms import SignupForm
+from django.contrib.auth.decorators import login_required
 
 class SignupView(View):
     def get(self, request):
@@ -21,3 +22,8 @@ class SignupView(View):
 class IndexView(View):
     def get(self, request):
         return render(request, "gamesvideo/index.html")
+
+# @login_required
+# class InfoView(View):
+#     def get(self, request):
+#         return render(request, "gamesvideo/info.html")

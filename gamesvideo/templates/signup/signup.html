@@ -1,0 +1,33 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block title %}<title>新規登録</title>{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="signup-form-container">
+        <h2 class="signup-title">新規登録</h2>
+
+        <div class="signup-form">
+            <form method="post">
+                {% csrf_token %}
+            
+                <label for="id_username">ユーザー名:</label>
+                {{ form.username }}
+
+                <label for="id_email">メールアドレス:</label>
+                {{ form.email }}
+
+                <label for="id_password1">パスワード:</label>
+                {{ form.password1 }}
+
+                <label for="id_password2">パスワード（確認）:</label>
+                {{ form.password2 }}
+
+                <button type="submit" class="signup-button">登録</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
