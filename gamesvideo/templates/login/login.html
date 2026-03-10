@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}<title>試合動画アップロードサイト | ログイン</title>{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+{% endblock css %}
+
+{% block content %}
+    <div class="login-form-container">
+        <div class="login-form">
+            <h2 class="login-title">ログイン</h2>
+            <form method="post">
+                {% csrf_token %}
+                <label for="id_username">ユーザー名:</label>
+                {{ form.username }}
+
+                <label for="id_password">パスワード:</label>
+                {{ form.password }}
+
+                <button type="submit" class="login-button">ログイン</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

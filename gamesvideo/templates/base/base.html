@@ -2,9 +2,9 @@
 {% load static %}
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     {% block css %}{% endblock %}
     {% block title %}<title>試合動画アップロードサイト</title>{% endblock %}
 </head>
@@ -16,12 +16,18 @@
             </div>
 
             <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="#">詳細</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'gamesvideo:signup'%}">新規登録</a>
-                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="{% url 'gamesvideo:logout' %}">ログアウト</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{% url 'gamesvideo:signup' %}">新規登録</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'gamesvideo:login' %}">ログイン</a>
+                    </li>
+                {% endif %}
             </ul>
         </nav>
     </header>
