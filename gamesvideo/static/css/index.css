@@ -37,10 +37,11 @@
 /* 動画一覧 */
 .video-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4列固定 */
     gap: 20px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px; /* 任意 */
+    margin: 0 auto; /* 横中央寄せ */
 }
 
 /* カード */
@@ -49,6 +50,7 @@
     padding: 10px;
     border-radius: 8px;
     background-color: #fff;
+    /* optional: 横幅いっぱいに広げたい場合は1frでOK */
 }
 
 .video-list .none {
@@ -59,4 +61,28 @@
     background-color: aqua;
     border-radius: 8px;
     max-width: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .video-list {
+        grid-template-columns: repeat(2, 1fr); /* タブレットなら2列 */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-list {
+        grid-template-columns: 1fr; /* スマホなら1列 */
+    }
 }

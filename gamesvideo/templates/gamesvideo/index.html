@@ -33,3 +33,23 @@
         </div>
     </div>    
 {% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // すべての video タグを取得
+    const videos = document.querySelectorAll(".video-list video");
+
+    videos.forEach(video => {
+        video.addEventListener("play", () => {
+            // 他の video が再生中なら止める
+            videos.forEach(v => {
+                if (v !== video && !v.paused) {
+                    v.pause();
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %}
