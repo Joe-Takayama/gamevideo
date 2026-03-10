@@ -5,6 +5,7 @@ from django.views import View
 from django.contrib.auth import login
 from .forms import SignupForm
 from django.contrib.auth.decorators import login_required
+from .models import Video
 
 # 新規登録ビュー
 class SignupView(View):
@@ -46,9 +47,6 @@ class LogoutView(View):
 # トップ画面ビュー
 class IndexView(View):
     def get(self, request):
-        return render(request, "gamesvideo/index.html")
+        videos = Video.objects.all().order_by("-created_at")
+        return render(request, "gamesvideo/index.html", {"videos": videos})
 
-# @login_required
-# class InfoView(View):
-#     def get(self, request):
-#         return render(request, "gamesvideo/info.html")

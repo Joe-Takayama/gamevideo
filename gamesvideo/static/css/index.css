@@ -1,0 +1,62 @@
+/* wrapper で縦横中央 */
+.wrapper {
+    display: flex;
+    flex-direction: column; /* 縦に積む */
+    justify-content: center; /* 垂直方向中央寄せ */
+    align-items: center; /* 水平方向中央寄せ */
+    min-height: 80vh; /* 画面の高さの80%くらいに設定 */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* タイトル中央寄せ */
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 投稿ボタン */
+.upload-button {
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* 動画一覧 */
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* カード */
+.video-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.video-list .none {
+    grid-column: 1 / -1; /* グリッドの全幅を使う */
+    justify-self: center; /* 横中央 */
+    text-align: center;
+    padding: 20px;
+    background-color: aqua;
+    border-radius: 8px;
+    max-width: 400px;
+}
